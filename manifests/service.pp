@@ -5,13 +5,11 @@ class flapjack::service {
     enable     => true,
     hasstatus  => true,
     hasrestart => false,
-    require    => [
-      File['/etc/flapjack/flapjack-config.yaml'],
-    ],
-    subscribe  => [
-      Package['flapjack'],
-      File['/etc/flapjack/flapjack-config.yaml'],
-    ]
+    #    require    => [
+    #  File['/etc/flapjack/flapjack-config.yaml'],
+    #],
+    subscribe  => Package['flapjack'],
+      #      File['/etc/flapjack/flapjack-config.yaml'],
   }
 
 }
